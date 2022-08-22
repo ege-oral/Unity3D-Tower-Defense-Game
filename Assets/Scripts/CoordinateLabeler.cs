@@ -28,6 +28,7 @@ public class CoordinateLabeler : MonoBehaviour
     private void GetTileCoordinateAndDisplay()
     {
         // Because it is 3D world we get z position instead of y position.
+        // UnityEditor.EditorSnapSettings.move refer for snapping distance.
         coordinates.x = (int) (transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
         coordinates.y = (int) (transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
         label.text = $"{coordinates.x},{coordinates.y}";
