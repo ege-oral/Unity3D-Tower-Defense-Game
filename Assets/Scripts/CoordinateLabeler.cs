@@ -22,7 +22,7 @@ public class CoordinateLabeler : MonoBehaviour
     {
         //if(!Application.isPlaying)
         GetTileCoordinateAndDisplay();
-        UpdateObjectName();
+        //UpdateObjectName();
     }
 
     private void GetTileCoordinateAndDisplay()
