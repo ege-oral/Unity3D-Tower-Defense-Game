@@ -18,6 +18,7 @@ public class TargetLocator : MonoBehaviour
     void Update()
     {
         AimWeapon();
+        //transform.Rotate(transform.rotation.x, 180f, transform.rotation.z);
     }
 
     private void AimWeapon()
