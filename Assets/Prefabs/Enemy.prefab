@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 714786114292999543}
   - component: {fileID: 7294780619130801293}
   - component: {fileID: 714786114292999542}
-  m_Layer: 0
+  - component: {fileID: 5662486699743215473}
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,6 +68,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   enemySpeed: 1
+--- !u!114 &5662486699743215473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 714786114292999537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 919dfe073835a2a4f9255f99ee101101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 5
 --- !u!1 &1885734512785328693
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +92,7 @@ GameObject:
   - component: {fileID: 7250046573501847822}
   - component: {fileID: 5497340085030330436}
   - component: {fileID: 9038657998101972176}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RamMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7849038304699787350}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ram
   m_TagString: Untagged
   m_Icon: {fileID: 0}

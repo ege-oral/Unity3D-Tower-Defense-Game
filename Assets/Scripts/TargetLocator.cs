@@ -6,7 +6,7 @@ public class TargetLocator : MonoBehaviour
 {
 
     [SerializeField] Transform weapon;
-    [SerializeField] Transform target;
+    Transform target;
 
     // Start is called before the first frame update
     void Start()

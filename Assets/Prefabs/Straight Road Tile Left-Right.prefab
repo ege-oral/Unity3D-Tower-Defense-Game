@@ -232,6 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3953431f365e6f842be939b4d8f03928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaceable: 0
+  defenseTower: {fileID: 0}
 --- !u!65 &-8553922337152177778
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -244,7 +246,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 1, z: 10}
-  m_Center: {x: 0, y: 10, z: 0}
+  m_Center: {x: 0, y: 9.6, z: 0}
 --- !u!1 &8827867481974607806
 GameObject:
   m_ObjectHideFlags: 0
