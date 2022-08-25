@@ -24,10 +24,18 @@ public class EnemyMovement : MonoBehaviour
     {
         foreach(Waypoint waypoint in path)
         {
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = new Vector3(waypoint.transform.position.x, 0f, waypoint.transform.position.z);
+            float travelDistance = 0f;
 
-            transform.position = new Vector3(waypoint.transform.position.x, 10f, waypoint.transform.position.z); 
-            print(transform.position);
-            yield return new WaitForSeconds(waitTime);
+            transform.LookAt(endPosition);
+            
+            while(travelDistance < 1f)
+            {
+                travelDistance += Time.deltaTime;
+                transform.position = Vector3.Lerp(startPosition, endPosition, travelDistance);
+                yield return new WaitForEndOfFrame();
+            }
         }
     }
 }
