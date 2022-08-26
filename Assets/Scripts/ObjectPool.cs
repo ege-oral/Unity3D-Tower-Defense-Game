@@ -5,31 +5,42 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
-    [SerializeField] float spawnTimer = 1f;
 
     private GameObject[] pool;
     [SerializeField] int poolSize = 5;
 
+    
+    [SerializeField] float spawnTimer = 2f;
+    float timer;
+    bool canSpawn = true;
+
     void Awake()
     {
+        
         PopulatePool();
     }
 
     void Start()
     {
-        //InvokeRepeating("InstantiateEnemy", 0f, spawnTimer);   
+        timer = spawnTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
 
+
+        EnableObjectInPool();
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            canSpawn = true;
+            timer = spawnTimer;
+        }
+
     }
 
-    private void InstantiateEnemy()
-    {
-        Instantiate(enemy, transform.position, Quaternion.identity);
-    }
+
 
     private void PopulatePool()
     {
@@ -38,7 +49,20 @@ public class ObjectPool : MonoBehaviour
         for(int i = 0; i < poolSize; i++)
         {
             pool[i] = Instantiate(enemy, transform.position, Quaternion.identity);
+            pool[i].transform.parent = gameObject.transform;
             pool[i].SetActive(false);
+        }
+    }
+
+    private void EnableObjectInPool()
+    {
+        foreach(GameObject enemy in pool)
+        {
+            if(!enemy.activeSelf && canSpawn)
+            {
+                enemy.SetActive(true);
+                canSpawn = false;   
+            }
         }
     }
 }

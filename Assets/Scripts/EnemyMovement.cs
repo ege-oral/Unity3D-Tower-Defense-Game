@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] [Range(0f, 5f)] float enemySpeed = 2f;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         StartCoroutine(EnemyPath());
     }
@@ -38,5 +38,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         this.gameObject.SetActive(false);
+        // Change position
+        transform.position = new Vector3(0f,0f,0f);
     }
 }

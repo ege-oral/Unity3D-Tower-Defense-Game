@@ -5,14 +5,25 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
 
-    [SerializeField] int enemyHealth = 5;
+    [SerializeField] int enemyMaxHealth = 5;
+    [SerializeField] int enemyCurrentHealth = 0;
 
+    private void OnEnable() 
+    {
+        enemyCurrentHealth = enemyMaxHealth;
+    }
     void OnParticleCollision(GameObject other) 
     {
-        enemyHealth -= 1;
-        if(enemyHealth <= 0)
+        Hit();
+    }
+
+    private void Hit()
+    {
+        enemyCurrentHealth -= 1;
+        if(enemyCurrentHealth <= 0)
         {
             this.gameObject.SetActive(false);
+            transform.position = new Vector3(0f,0f,0f);
         }
     }
 }
