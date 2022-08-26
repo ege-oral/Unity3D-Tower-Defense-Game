@@ -38,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         this.gameObject.SetActive(false);
-        // Change position
+        // DON'T FORGET THE CHANGE POSITION
         transform.position = new Vector3(0f,0f,0f);
     }
 }
