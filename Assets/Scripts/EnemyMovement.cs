@@ -37,6 +37,6 @@ public class EnemyMovement : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
-        gameObject.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }
