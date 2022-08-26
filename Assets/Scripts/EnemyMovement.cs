@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(DisplayPath());
+        StartCoroutine(EnemyPath());
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
-    IEnumerator DisplayPath()
+    IEnumerator EnemyPath()
     {
         foreach(Waypoint waypoint in path)
         {
@@ -37,5 +37,6 @@ public class EnemyMovement : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        gameObject.SetActive(false);
     }
 }
