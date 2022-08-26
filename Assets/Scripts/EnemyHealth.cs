@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
         if(enemyCurrentHealth <= 0)
         {
             this.gameObject.SetActive(false);
-            // DON'T FORGET THE CHANGE POSITION
+            // DON'T FORGET THE CHANGE POSITION.
             transform.position = new Vector3(0f,0f,0f);
         }
     }
