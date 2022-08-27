@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27688373e3be20947a55666f8b834199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &1745465617454254972
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3953431f365e6f842be939b4d8f03928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defenseTower: {fileID: 5179723068259058570, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
   isPlaceable: 0
-  defenseTower: {fileID: 0}
 --- !u!65 &-4540328716279607272
 BoxCollider:
   m_ObjectHideFlags: 0

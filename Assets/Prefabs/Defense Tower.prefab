@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3049131714819384361}
   - component: {fileID: -6240303305806599412}
+  - component: {fileID: 5179723068259058570}
   m_Layer: 0
   m_Name: Defense Tower
   m_TagString: Untagged
@@ -49,6 +50,18 @@ MonoBehaviour:
   weapon: {fileID: 3144582324300694500}
   arrowParticles: {fileID: 2273110312170957703}
   towerRange: 15
+--- !u!114 &5179723068259058570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219458064393657486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d0a2b347cc1ef4ca2aa68d5b18e73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4398763051713754888
 GameObject:
   m_ObjectHideFlags: 0
