@@ -48,4 +48,9 @@ public class EnemyMovement : MonoBehaviour
         // DON'T FORGET THE CHANGE POSITION.
         transform.position = new Vector3(0f,0f,0f);
     }
+
+    public void ReturnToStart()
+    {
+        
+    }
 }
