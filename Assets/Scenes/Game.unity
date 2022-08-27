@@ -613,8 +613,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1218496476}
-  spawnTimer: 1
-  poolSize: 5
+  poolSize: 10
+  spawnTimer: 0.5
 --- !u!4 &542762843
 Transform:
   m_ObjectHideFlags: 0
