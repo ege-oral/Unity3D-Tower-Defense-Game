@@ -8,7 +8,13 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0f, 5f)] float enemySpeed = 2f;
 
-    // Start is called before the first frame update
+    Enemy enemy;
+
+    private void Start() 
+    {
+        enemy = GetComponent<Enemy>();    
+    }
+
     void OnEnable()
     {
         StartCoroutine(EnemyPath());
@@ -37,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        enemy.PenaltyGold();
         this.gameObject.SetActive(false);
         // DON'T FORGET THE CHANGE POSITION.
         transform.position = new Vector3(0f,0f,0f);
