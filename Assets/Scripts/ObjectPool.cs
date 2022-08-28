@@ -7,40 +7,18 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] GameObject enemy;
 
     private GameObject[] pool;
-    [SerializeField] int poolSize = 5;
-
-    
-    [SerializeField] float spawnTimer = 2f;
-    float timer;
-    bool canSpawn = true;
+    [SerializeField][Range(0, 50)] int poolSize = 5;
+    [SerializeField][Range(0.1f, 10f)] float spawnTimer = 2f;
 
     void Awake()
-    {
-        
+    {   
         PopulatePool();
     }
 
     void Start()
     {
-        timer = spawnTimer;
+        StartCoroutine(SpawnEnemy());
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-        EnableObjectInPool();
-        timer -= Time.deltaTime;
-        if(timer <= 0)
-        {
-            canSpawn = true;
-            timer = spawnTimer;
-        }
-
-    }
-
-
 
     private void PopulatePool()
     {
@@ -58,11 +36,21 @@ public class ObjectPool : MonoBehaviour
     {
         foreach(GameObject enemy in pool)
         {
-            if(!enemy.activeSelf && canSpawn)
+            if(!enemy.activeSelf)
             {
                 enemy.SetActive(true);
-                canSpawn = false;   
+                return;
             }
         }
     }
+
+    IEnumerator SpawnEnemy()
+    {
+        while(true)
+        {
+            EnableObjectInPool();
+            yield return new WaitForSeconds(spawnTimer);
+        }
+    }
+
 }

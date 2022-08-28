@@ -6,6 +6,7 @@ using TMPro;
 
 // It will always execute the code in editor or in game.
 [ExecuteAlways]
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLabeler : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
@@ -29,7 +30,7 @@ public class CoordinateLabeler : MonoBehaviour
     void Update()
     {
         GetTileCoordinateAndDisplay();
-        ChangeColor();
+        SetLabelColor();
         ToggleLabels();
     }
 
@@ -47,7 +48,7 @@ public class CoordinateLabeler : MonoBehaviour
         transform.parent.name = coordinates.ToString();
     }
 
-    private void ChangeColor()
+    private void SetLabelColor()
     {
         if(waypoint.IsPlaceable)
         {

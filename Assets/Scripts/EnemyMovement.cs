@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
     [SerializeField] [Range(0f, 5f)] float enemySpeed = 2f;
 
@@ -17,6 +17,7 @@ public class EnemyMovement : MonoBehaviour
 
     void OnEnable()
     {
+        ReturnToStart();
         StartCoroutine(EnemyPath());
     }
 
@@ -27,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     IEnumerator EnemyPath()
-    {
+    { 
         foreach(Waypoint waypoint in path)
         {
             Vector3 startPosition = transform.position;
@@ -43,14 +44,18 @@ public class EnemyMovement : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+        FinishPath();
+        
+    }
+
+    private void FinishPath()
+    {
         enemy.PenaltyGold();
         this.gameObject.SetActive(false);
-        // DON'T FORGET THE CHANGE POSITION.
-        transform.position = new Vector3(0f,0f,0f);
     }
 
     public void ReturnToStart()
     {
-        
+        transform.position = new Vector3(0f,0f,0f);
     }
 }
