@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] List<Waypoint> path = new List<Waypoint>();
+    [SerializeField] GameObject path;
     [SerializeField] [Range(0f, 5f)] float enemySpeed = 2f;
 
     Enemy enemy;
@@ -29,7 +29,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator EnemyPath()
     { 
-        foreach(Waypoint waypoint in path)
+        foreach(Transform waypoint in path.transform)
         {
             Vector3 startPosition = transform.position;
             Vector3 endPosition = new Vector3(waypoint.transform.position.x, 0f, waypoint.transform.position.z);
@@ -56,6 +56,6 @@ public class EnemyMovement : MonoBehaviour
 
     public void ReturnToStart()
     {
-        transform.position = new Vector3(0f,0f,0f);
+        transform.position = new Vector3(2f,0f,10f);
     }
 }

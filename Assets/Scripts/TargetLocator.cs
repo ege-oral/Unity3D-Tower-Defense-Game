@@ -43,9 +43,15 @@ public class TargetLocator : MonoBehaviour
 
     private void AimWeapon()
     {
-        float targetDistance = Vector3.Distance(transform.position, target.position);
-        weapon.LookAt(target);
-        Attack(targetDistance <= towerRange);
+        try{
+            float targetDistance = Vector3.Distance(transform.position, target.position);
+            weapon.LookAt(target);
+            Attack(targetDistance <= towerRange);
+        }
+        catch{
+            // If there is no target pass.
+        }
+        
         
     }
 
