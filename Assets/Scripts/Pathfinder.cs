@@ -28,13 +28,15 @@ public class Pathfinder : MonoBehaviour
             grid = gridManager.Grid;
         }
 
-        startNode = new Node(startCoordinates, true);
-        destinationNode = new Node(destinationCoordinates, true);
     }
 
     void Start()
-    {
+    {   
+        startNode = gridManager.Grid[startCoordinates];
+        destinationNode = gridManager.Grid[destinationCoordinates];
+
         BreadthFirstSearch();
+        BuildPath();
     }
 
     void BreadthFirstSearch()
@@ -54,7 +56,6 @@ public class Pathfinder : MonoBehaviour
             // If we find our destination point then break.
             if(currentSearchNode.coordinates == destinationCoordinates)
             {
-                currentSearchNode.isPath = true;
                 isRunning = false;
             }
         }
@@ -83,6 +84,7 @@ public class Pathfinder : MonoBehaviour
             // If the node not in reached dictionary and walkable.
             if(!reached.ContainsKey(neighbor.coordinates) && neighbor.isWalkable)
             {
+                neighbor.connectedTo = currentSearchNode;
                 // We add node in to the reached dictionary and the queue.
                 reached.Add(neighbor.coordinates, neighbor);
                 frontier.Enqueue(neighbor);
@@ -91,5 +93,22 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
+    List<Node> BuildPath()
+    {
+        List<Node> path = new List<Node>();
+        Node currentNode = destinationNode;
+
+        path.Add(currentNode);
+        currentNode.isPath = true;
+
+        while(currentNode.connectedTo != null)
+        {
+            currentNode.isPath = true;
+            currentNode = currentNode.connectedTo;
+            path.Add(currentNode);
+        }
+        path.Reverse();
+        return path;
+    }
     
 }
