@@ -45,4 +45,5 @@ public class Bank : MonoBehaviour
             SceneManager.LoadScene(currentSceneIndex);
         }
     }
+
 }

@@ -5,20 +5,28 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] GameObject path;
+    List<Node> path = new List<Node>();
+    
+
+
     [SerializeField] [Range(0f, 5f)] float enemySpeed = 2f;
 
     Enemy enemy;
+    GridManager gridManager;
+    Pathfinder pathfinder;
 
-    private void Start() 
+    private void Awake() 
     {
         enemy = GetComponent<Enemy>();    
+        gridManager = FindObjectOfType<GridManager>();
+        pathfinder = FindObjectOfType<Pathfinder>();
     }
 
     void OnEnable()
     {
+        FindPath();
         ReturnToStart();
-        StartCoroutine(EnemyPath());
+        StartCoroutine(FollowPath());
     }
 
     // Update is called once per frame
@@ -27,25 +35,10 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
-    IEnumerator EnemyPath()
+    void FindPath()
     { 
-        foreach(Transform waypoint in path.transform)
-        {
-            Vector3 startPosition = transform.position;
-            Vector3 endPosition = new Vector3(waypoint.transform.position.x, 0f, waypoint.transform.position.z);
-            float travelDistance = 0f;
-
-            transform.LookAt(endPosition);
-
-            while(travelDistance < 1f)
-            {
-                travelDistance += Time.deltaTime * enemySpeed;
-                transform.position = Vector3.Lerp(startPosition, endPosition, travelDistance);
-                yield return new WaitForEndOfFrame();
-            }
-        }
-        FinishPath();
-        
+        path.Clear();
+        path = pathfinder.GetNewPath();
     }
 
     private void FinishPath()
@@ -56,6 +49,26 @@ public class EnemyMovement : MonoBehaviour
 
     public void ReturnToStart()
     {
-        transform.position = new Vector3(2f,0f,10f);
+        // See what will happen
+        transform.position = gridManager.GetPositionFromCoordinates(pathfinder.StartCoordinates);
+    }
+
+    IEnumerator FollowPath()
+    {
+        for(int i = 0; i < path.Count; i++)
+        {
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = gridManager.GetPositionFromCoordinates(path[i].coordinates);
+            float travelPercent = 0f;
+            transform.LookAt(endPosition);
+
+            while(travelPercent < 1f)
+            {
+                travelPercent += Time.deltaTime * enemySpeed;
+                transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
+                yield return new WaitForEndOfFrame();
+            }
+        }
+        FinishPath();
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tower : MonoBehaviour
 {
     [SerializeField] int towerCost = 75;
+    public int TowerCost { get { return towerCost; } }
 
     public bool CreateTower(Tower tower, Vector3 position)
     {

@@ -9,14 +9,39 @@ public class Waypoint : MonoBehaviour
 
     public bool IsPlaceable{ get { return isPlaceable; } } // Property.
 
+    GridManager gridManager;
+    Pathfinder pathfinder;
+    Vector2Int coordinates = new Vector2Int();
+
+    Bank bank;
+    
+    private void Awake() 
+    {
+        bank = FindObjectOfType<Bank>();
+        gridManager = FindObjectOfType<GridManager>();
+        pathfinder = FindObjectOfType<Pathfinder>();
+    }
+
+    private void Start() 
+    {
+        if(gridManager != null)
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
+
+            if(!isPlaceable)
+            {
+                gridManager.BlockMethod(coordinates);
+            }
+        }
+    }
+
     private void OnMouseDown() 
     {
-        if(isPlaceable)
+        if(gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates) && bank.CurrentBalance >= defenseTower.TowerCost)
         {
-
             bool isPlaced = defenseTower.CreateTower(defenseTower, new Vector3(transform.position.x, 0.5f, transform.position.z));
-            //Instantiate(defenseTower, new Vector3(transform.position.x, 0.5f, transform.position.z), Quaternion.identity);
             isPlaceable = !isPlaced;
-        }  
+            gridManager.BlockMethod(coordinates);
+        }
     }
 }
