@@ -16701,11 +16701,11 @@ PrefabInstance:
       objectReference: {fileID: 143879540}
     - target: {fileID: 130838926660362157, guid: 2fae2070f7b4e7247b71e162f55273a0, type: 3}
       propertyPath: currentBalance
-      value: 1000
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 130838926660362157, guid: 2fae2070f7b4e7247b71e162f55273a0, type: 3}
       propertyPath: startingBalance
-      value: 1000
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 130838926660362158, guid: 2fae2070f7b4e7247b71e162f55273a0, type: 3}
       propertyPath: m_RootOrder

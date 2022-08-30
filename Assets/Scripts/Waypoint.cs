@@ -13,11 +13,10 @@ public class Waypoint : MonoBehaviour
     Pathfinder pathfinder;
     Vector2Int coordinates = new Vector2Int();
 
-    Bank bank;
+
     
     private void Awake() 
     {
-        bank = FindObjectOfType<Bank>();
         gridManager = FindObjectOfType<GridManager>();
         pathfinder = FindObjectOfType<Pathfinder>();
     }
@@ -37,11 +36,14 @@ public class Waypoint : MonoBehaviour
 
     private void OnMouseDown() 
     {
-        if(gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates) && bank.CurrentBalance >= defenseTower.TowerCost)
+        if(gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
         {
-            bool isPlaced = defenseTower.CreateTower(defenseTower, new Vector3(transform.position.x, 0.5f, transform.position.z));
-            isPlaceable = !isPlaced;
-            gridManager.BlockMethod(coordinates);
+            bool isSuccessful = defenseTower.CreateTower(defenseTower, new Vector3(transform.position.x, 0.5f, transform.position.z));
+            if(isSuccessful)
+            {
+                gridManager.BlockMethod(coordinates);
+                pathfinder.NotifyReceivers();
+            }  
         }
     }
 }

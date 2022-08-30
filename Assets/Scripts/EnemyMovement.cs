@@ -24,21 +24,27 @@ public class EnemyMovement : MonoBehaviour
 
     void OnEnable()
     {
-        FindPath();
         ReturnToStart();
-        StartCoroutine(FollowPath());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        RecalculatePath(true);
         
     }
 
-    void FindPath()
+    void RecalculatePath(bool resetPath)
     { 
+        Vector2Int coordinates = new Vector2Int();
+
+        if(resetPath)
+        {
+            coordinates = pathfinder.StartCoordinates;
+        }
+        else
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
+        }
+        StopAllCoroutines();
         path.Clear();
-        path = pathfinder.GetNewPath();
+        path = pathfinder.GetNewPath(coordinates);
+        StartCoroutine(FollowPath());
     }
 
     private void FinishPath()
@@ -50,12 +56,12 @@ public class EnemyMovement : MonoBehaviour
     public void ReturnToStart()
     {
         // See what will happen
-        transform.position = gridManager.GetPositionFromCoordinates(pathfinder.StartCoordinates);
+        transform.position = new Vector3(3f, 0f, 10f);
     }
 
     IEnumerator FollowPath()
     {
-        for(int i = 0; i < path.Count; i++)
+        for(int i = 1; i < path.Count; i++)
         {
             Vector3 startPosition = transform.position;
             Vector3 endPosition = gridManager.GetPositionFromCoordinates(path[i].coordinates);
