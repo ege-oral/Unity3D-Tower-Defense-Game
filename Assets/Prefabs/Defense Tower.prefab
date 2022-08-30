@@ -30,8 +30,8 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3144582324300694500}
   - {fileID: 986194784190733575}
+  - {fileID: 3144582324300694500}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -62,6 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d0a2b347cc1ef4ca2aa68d5b18e73f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerCost: 75
+  towerBuildTime: 0.5
 --- !u!1 &4398763051713754888
 GameObject:
   m_ObjectHideFlags: 0
@@ -4907,7 +4909,7 @@ Transform:
   m_Children:
   - {fileID: 8824681408979855285}
   m_Father: {fileID: 3049131714819384361}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &249074202148633262
 MeshFilter:
@@ -4990,7 +4992,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3049131714819384361}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2700054976229155917
 MeshFilter:
