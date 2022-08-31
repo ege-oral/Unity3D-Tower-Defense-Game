@@ -56,7 +56,7 @@ public class EnemyMovement : MonoBehaviour
     public void ReturnToStart()
     {
         // See what will happen
-        transform.position = new Vector3(3f, 0f, 10f);
+        transform.position = gridManager.GetPositionFromCoordinates(pathfinder.StartCoordinates);
     }
 
     IEnumerator FollowPath()
