@@ -38,8 +38,8 @@ public class CoordinateLabeler : MonoBehaviour
     {
         // Because it is 3D world we get z position instead of y position.
         // UnityEditor.EditorSnapSettings.move refer for snapping distance.
-        coordinates.x = (int) (transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
-        coordinates.y = (int) (transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        coordinates.x = (int) (transform.parent.position.x / 10);
+        coordinates.y = (int) (transform.parent.position.z / 10);
         label.text = $"{coordinates.x},{coordinates.y}";
     }
 
