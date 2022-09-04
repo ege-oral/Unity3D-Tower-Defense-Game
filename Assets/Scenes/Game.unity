@@ -1720,7 +1720,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &162590839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10783,7 +10785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4364562529824784, guid: ee1aeba65983cc34788500f726965fd0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.99065
+      value: -16.8
       objectReference: {fileID: 0}
     - target: {fileID: 4364562529824784, guid: ee1aeba65983cc34788500f726965fd0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21498,7 +21500,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565729960777620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21512,7 +21516,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565729987836916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21526,7 +21532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565730144076094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21540,7 +21548,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565730411683745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21554,7 +21564,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565730473532869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21568,7 +21580,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565730539407132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21582,7 +21596,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565730658210134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21596,7 +21612,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565730679015976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21610,7 +21628,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565730721863135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21624,7 +21644,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565731009597754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21638,7 +21660,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565731088827602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21652,7 +21676,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565731297469031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21666,7 +21692,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565731479233574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21680,7 +21708,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565731485472566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21694,7 +21724,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565731508607478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21708,7 +21740,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!114 &4614565731637248585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21722,7 +21756,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  pathColor: {r: 1, g: 0.5, b: 0, a: 1}
 --- !u!64 &7354412267779806950
 MeshCollider:
   m_ObjectHideFlags: 0
