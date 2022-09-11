@@ -1,5 +1,5 @@
 # Tower-Defense-Game
-### There is a copy of this game in the Releases section.  
+### There is a copy of this game in the Releases section!
 The player's goal is to protect the player castle (blue) from the enemy castle (red). 
 
 - You can exit the game with "Escape" key.
