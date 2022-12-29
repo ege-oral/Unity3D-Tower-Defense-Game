@@ -1,4 +1,4 @@
-# Tower-Defense-Game
+# Unity3D-Tower-Defense-Game
 ### There is a copy of this game in the Releases section!
 The player's goal is to protect the player castle (blue) from the enemy castle (red). 
 
